@@ -78,7 +78,7 @@ class Battleship:
         prohibited_filed_list = []
         for ship in self.list_of_ships:
             list_of_lengths.append(ship.length)
-            for line in range(ship.start[0] - 1, ship.start[1] + 2):
+            for line in range(ship.start[0] - 1, ship.end[0] + 2):
                 for column in range(ship.start[1] - 1, ship.end[1] + 2):
                     prohibited_filed_list.append((line, column))
 
@@ -90,13 +90,13 @@ class Battleship:
             print(f"The amount of single-deck ships is not correct, "
                   f"it should be {single_deck}.")
         elif list_of_lengths.count(double_deck) != double_deck:
-            print(f"The amount of single-deck ships is not correct, "
+            print(f"The amount of double_deck ships is not correct, "
                   f"it should be {double_deck}.")
         elif list_of_lengths.count(three_deck) != three_deck:
-            print(f"The amount of single-deck ships is not correct, "
+            print(f"The amount of three_deck ships is not correct, "
                   f"it should be {three_deck}.")
         elif list_of_lengths.count(four_deck) != four_deck:
-            print(f"The amount of single-deck ships is not correct, "
+            print(f"The amount of four_deck ships is not correct, "
                   f"it should be {four_deck}.")
 
         for cell in self.field:
